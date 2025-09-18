@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>oduwa - mentors connect</title>
+      <meta name="keywords" content="mentorship, enterprenuer, business, edo state">
+      <meta name="description" content="Bridging the gap between mentors and mentees">
+      <meta name="author" content="MediCare Hospital">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+      <style>
+         /* General Styles */
+         body {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+         }
+         
+         h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+         }
+         
+         .banner_taital {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+         }
+         
+         .banner_text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+         }
+         
+         .read_bt a {
+            background: #1f1f1f;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+         }
+         
+         .read_bt a:hover {
+            background: #1f1f1f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(12, 183, 214, 0.4);
+         }
+         
+         .layout_padding {
+            padding-top: 70px;
+            padding-bottom: 70px;
+         }
+         
+         /* Slider Styles */
+         .header-slider {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+         }
+         
+         .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+         }
+         
+         .slide.active {
+            opacity: 1;
+         }
+         
+         .slide-content {
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 0 15%;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+         }
+         
+         .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+         }
+         
+         .slide-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+         }
+         
+         .slide-indicator.active {
+            background-color: #ffffff;
+         }
+         
+         .slide-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 10;
+         }
+         
+         .slide-control {
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+         }
+         
+         .slide-control:hover {
+            background-color: rgba(0,0,0,0.6);
+         }
+         
+         /* Improved Header Styles */
+         .custom_bg {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+         }
+         
+         .custom_menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+         }
+         
+         .custom_menu li {
+            margin-right: 25px;
+         }
+         
+         .custom_menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: capitalize;
+         }
+         
+         .custom_menu a:hover {
+            color: #0cb7d6;
+         }
+         
+         .custom_menu li.active a {
+            color: #0cb7d6;
+         }
+         
+         /* Improved Sign Up Button */
+         .signup-btn {
+            background: linear-gradient(to right, #1f1f1f, #1f1f1f);
+            color: #ffffff !important;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(12, 183, 214, 0.3);
+            cursor: pointer;
+         }
+         
+         .signup-btn:hover {
+            background: linear-gradient(to right, #0a9eb8, #098a9f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(12, 183, 214, 0.4);
+            color: white;
+            text-decoration: none;
+         }
+         
+         .signup-btn i {
+            margin-right: 8px;
+         }
+         
+         
+         /* Trusted Partners Section */
+         .partners_section {
+            padding: 70px 0;
+            background-color: #f8f9fa;
+         }
+         
+         .partners_taital {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+         }
+         
+         .partners_taital:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0cb7d6;
+         }
+         
+         .partners_text {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+         }
+         
+         .partner_logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+         }
+         
+         .partner_logo {
+   max-width: 180px;
+   max-height: 80px;
+   object-fit: contain;
+   transition: all 0.3s;
+   filter: none; /* Remove the grayscale filter */
+   opacity: 0.8;
+}
+
+.partner_logo:hover {
+   opacity: 1;
+   transform: scale(1.05);
+}
+         
+         .partner_logo_container {
+   padding: 20px;
+   background: #ffffff;
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+   transition: transform 0.3s;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 120px;
+   margin-bottom: 15px;
+}
+
+.partner_logo_container:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 20px rgba(12, 183, 214, 0.15);
+}
+         
+         /* Board of Trustees Section */
+         .trustees_section {
+            padding: 70px 0;
+         }
+         
+         .trustees_taital {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+         }
+         
+         .trustees_taital:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0cb7d6;
+         }
+         
+         .trustee_card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+         }
+         
+         .trustee_card:hover {
+            transform: translateY(-10px);
+         }
+         
+         .trustee_img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+         }
+         
+         .trustee_info {
+            padding: 20px;
+            text-align: center;
+         }
+         
+         .trustee_name {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333;
+         }
+         
+         .trustee_position {
+            color: #0cb7d6;
+            font-style: italic;
+            margin-bottom: 10px;
+         }
+         
+         .trustee_bio {
+            color: #666;
+            font-size: 14px;
+         }
+         
+         /* Footer Styles */
+         .footer_section {
+            background-color: #1f1f1f;
+            padding: 70px 0 0;
+         }
+         
+         .footer_taital {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+         }
+         
+         .location_main ul {
+            list-style: none;
+            padding: 0;
+         }
+         
+         .location_main li {
+            margin-bottom: 15px;
+         }
+         
+         .location_main a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+         }
+         
+         .location_main a:hover {
+            color: #0cb7d6;
+         }
+         
+         .location_main i {
+            margin-right: 10px;
+            color: #0cb7d6;
+         }
+         
+         .footer_social_icon ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+         }
+         
+         .footer_social_icon a {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s;
+         }
+         
+         .footer_social_icon a:hover {
+            color: #0cb7d6;
+         }
+         
+         .footer_menu ul {
+            list-style: none;
+            padding: 0;
+         }
+         
+         .footer_menu li {
+            margin-bottom: 10px;
+         }
+         
+         .footer_menu a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+         }
+         
+         .footer_menu a:hover {
+            color: #0cb7d6;
+         }
+         
+         .ipsum_text {
+            color: #ffffff;
+            line-height: 1.6;
+         }
+         
+         .dryfood_text {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+         }
+         
+         .dryfood_text img {
+            border-radius: 8px;
+            margin-right: 15px;
+         }
+         
+         .copyright_section {
+            background-color: #0cb7d6;
+            padding: 20px 0;
+            text-align: center;
+         }
+         
+         .copyright_text {
+            color: #ffffff;
+            margin: 0;
+         }
+         
+         /* Signup Modal Styles */
+         .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+         }
+         
+         .signup-modal .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+         }
+         
+         .signup-modal .modal-header {
+            background: linear-gradient(to right, #0cb7d6, #0a9eb8);
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom: none;
+         }
+         
+         .signup-modal .modal-header .close {
+            color: white;
+            text-shadow: none;
+            opacity: 0.8;
+         }
+         
+         .signup-modal .modal-header .close:hover {
+            opacity: 1;
+         }
+         
+         .signup-modal .modal-body {
+            padding: 30px;
+         }
+         
+         .signup-modal .form-group {
+            margin-bottom: 20px;
+         }
+         
+         .signup-modal .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+         }
+         
+         .signup-modal .form-control:focus {
+            border-color: #0cb7d6;
+            box-shadow: 0 0 0 0.2rem rgba(12, 183, 214, 0.25);
+         }
+         
+         .signup-modal .btn-signup {
+            background: linear-gradient(to right, #0cb7d6, #0a9eb8);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s;
+         }
+         
+         .signup-modal .btn-signup:hover {
+            background: linear-gradient(to right, #0a9eb8, #098a9f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(12, 183, 214, 0.4);
+         }
+         
+         .signup-modal .login-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+         }
+         
+         .signup-modal .login-link a {
+            color: #0cb7d6;
+            text-decoration: none;
+            font-weight: 600;
+         }
+         
+         .signup-modal .login-link a:hover {
+            text-decoration: underline;
+         }
+         
+         .signup-modal .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+         }
+         
+         .signup-modal .divider::before,
+         .signup-modal .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+         }
+         
+         .signup-modal .divider span {
+            padding: 0 10px;
+            color: #777;
+            font-size: 14px;
+         }
+         
+         .signup-modal .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+         }
+         
+         .signup-modal .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s;
+         }
+         
+         .signup-modal .social-btn.facebook {
+            background-color: #3b5998;
+         }
+         
+         .signup-modal .social-btn.google {
+            background-color: #dd4b39;
+         }
+         
+         .signup-modal .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+         }
+         
+         @media (max-width: 768px) {
+            .custom_bg {
+               flex-direction: column;
+            }
+            
+            .custom_menu {
+               margin-bottom: 15px;
+            }
+            
+            .custom_menu ul {
+               flex-direction: column;
+               align-items: center;
+            }
+            
+            .custom_menu li {
+               margin: 5px 0;
+            }
+            
+            .partner_logos {
+               gap: 20px;
+            }
+            
+            .partner_logo {
+               max-width: 120px;
+            }
+            
+            .banner_taital {
+               font-size: 2.5rem;
+            }
+            
+            .signup-modal .modal-body {
+               padding: 20px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+   <!-- header section start -->
+    <div class="header_section">
+         {%- include header.html -%}
+        
+        <!-- Slider Section -->
+        <div class="header-slider">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/mentorship/1.jpeg');">
+                <div class="slide-content">
+                    <h1 class="banner_taital">Connect. Learn. Grow.</h1>
+                    <p class="banner_text">Bridging the gap between mentors and mentees to unlock potential and create lasting impact.</p>
+                    <div class="read_bt"><a href="#">Find a Mentor</a></div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/mentorship/2.jpeg');">
+                <div class="slide-content">
+                    <h1 class="banner_taital">Guidance at Every Step</h1>
+                    <p class="banner_text">Access tailored advice, shared experiences, and encouragement from experts who've walked the path before you.</p>
+                    <div class="read_bt"><a href="#">Explore Mentors</a></div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/mentorship/3.jpeg');">
+                <div class="slide-content">
+                    <h1 class="banner_taital">Shape the Future</h1>
+                    <p class="banner_text">Join a community where knowledge is shared, connections are built, and dreams become reality.</p>
+                    <div class="read_bt"><a href="#">Become a Mentor</a></div>
+                </div>
+            </div>
+
+            <!-- Indicators -->
+            <div class="slide-indicators">
+                <div class="slide-indicator active" data-slide="0"></div>
+                <div class="slide-indicator" data-slide="1"></div>
+                <div class="slide-indicator" data-slide="2"></div>
+            </div>
+
+            <!-- Controls -->
+            <div class="slide-controls">
+                <div class="slide-control prev">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <div class="slide-control next">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header section end -->
+      
+      <!-- Signup Modal -->
+  <!-- Signup Modal -->
+<div class="modal fade signup-modal" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="signupModalLabel">Create an Account</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form id="signupForm">
+               <div class="form-group">
+                  <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+               </div>
+               <div class="form-group">
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+               </div>
+               <div class="form-group">
+                  <select class="form-control" id="userType" required>
+                     <option value="" disabled selected>I am signing up as...</option>
+                     <option value="mentor">Mentor</option>
+                     <option value="mentee">Mentee</option>
+                  </select>
+               </div>
+               <div class="form-group" id="mentorSkillsGroup" style="display: none;">
+                  <select class="form-control" id="mentorSkills" multiple>
+                     <option value="" disabled>Select skills you can mentor (hold Ctrl to select multiple)</option>
+                     <option value="web-development">Web Development</option>
+                     <option value="data-science">Data Science</option>
+                     <option value="ui-ux-design">UI/UX Design</option>
+                     <option value="digital-marketing">Digital Marketing</option>
+                     <option value="project-management">Project Management</option>
+                     <option value="cloud-computing">Cloud Computing</option>
+                     <option value="cybersecurity">Cybersecurity</option>
+                     <option value="mobile-development">Mobile Development</option>
+                     <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                     <option value="devops">DevOps</option>
+                  </select>
+                  <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple skills</small>
+               </div>
+               <div class="form-group" id="menteeSkillsGroup" style="display: none;">
+                  <select class="form-control" id="menteeSkills" multiple>
+                     <option value="" disabled>Select skills you want to learn (hold Ctrl to select multiple)</option>
+                     <option value="web-development">Web Development</option>
+                     <option value="data-science">Data Science</option>
+                     <option value="ui-ux-design">UI/UX Design</option>
+                     <option value="digital-marketing">Digital Marketing</option>
+                     <option value="project-management">Project Management</option>
+                     <option value="cloud-computing">Cloud Computing</option>
+                     <option value="cybersecurity">Cybersecurity</option>
+                     <option value="mobile-development">Mobile Development</option>
+                     <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                     <option value="devops">DevOps</option>
+                  </select>
+                  <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple skills</small>
+               </div>
+               <div class="form-group">
+                  <input type="password" class="form-control" id="password" placeholder="Password" required>
+               </div>
+               <div class="form-group">
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+               </div>
+               <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="termsAgree" required>
+                  <label class="form-check-label" for="termsAgree">I agree to the <a href="#">Terms & Conditions</a></label>
+               </div>
+               <button type="submit" class="btn btn-signup">Sign Up</button>
+            </form>
+            
+            <div class="divider">
+               <span>Or sign up with</span>
+            </div>
+            
+            <div class="social-login">
+               <a href="#" class="social-btn facebook">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+               </a>
+               <a href="#" class="social-btn google">
+                  <i class="fa fa-google" aria-hidden="true"></i>
+               </a>
+            </div>
+            
+            <div class="login-link">
+               Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Log In</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+      
+      <!-- Login Modal (for reference) -->
+      <div class="modal fade signup-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="loginModalLabel">Log In to Your Account</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <form id="loginForm">
+                     <div class="form-group">
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Email Address" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                     </div>
+                     <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                     </div>
+                     <button type="submit" class="btn btn-signup">Log In</button>
+                     <div class="text-right mt-2">
+                        <a href="#">Forgot Password?</a>
+                     </div>
+                  </form>
+                  
+                  <div class="divider">
+                     <span>Or log in with</span>
+                  </div>
+                  
+                  <div class="social-login">
+                     <a href="#" class="social-btn facebook">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#" class="social-btn google">
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                     </a>
+                  </div>
+                  
+                  <div class="login-link">
+                     Don't have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- trusted partners section start -->
+      <div id="partners" class="partners_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="partners_taital">Our Trusted Partners</h1>
+                  <p class="partners_text">We collaborate with leading healthcare organizations and technology providers to deliver the best care possible to our patients.</p>
+               </div>
+            </div>
+            <div class="row justify-content-center">
+               <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="partner_logo_container">
+                     <img src="images/partners/amazon.jpg" alt="Amamzon" class="partner_logo">
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="partner_logo_container">
+                                         <img src="images/partners/rdc_logo.jpeg" alt="Burger" class="partner_logo">
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="partner_logo_container">
+                         <img src="images/partners/rdei_logo.png" alt="Facebook" class="partner_logo">
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="partner_logo_container">
+                     <img src="images/partners/esg.png" alt="Google" class="partner_logo">
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="partner_logo_container">
+                     <img src="images/partners/nb.jpeg" alt="KFC" class="partner_logo">
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="partner_logo_container">
+                     <img src="images/partners/first_bank.jpeg" alt="Pepsi" class="partner_logo">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- trusted partners section end -->
+      
+      <!-- Board of Trustees Section -->
+      <div id="trustees" class="trustees_section">
+         <div class="container">
+            <h2 class="trustees_taital">Board of Trustees</h2>
+            <div class="row">
+               <div class="col-lg-4 col-md-6">
+                  <div class="trustee_card">
+                     <img src="images/bot/Pst_glory_okoduwa.jpeg" alt="Dr. John Smith" class="trustee_img">
+                     <div class="trustee_info">
+                        <h3 class="trustee_name">Pst. Glory Okoduwa</h3>
+                        <p class="trustee_position">Founder</p>
+                        <p class="trustee_bio">With over 25 years of experience in healthcare management, Dr. Smith leads our board with vision and dedication.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="trustee_card">
+                     <img src="images/bot/Stephen-Akintayo-scaled.jpg" alt="Dr. Sarah Johnson" class="trustee_img">
+                     <div class="trustee_info">
+                        <h3 class="trustee_name">Dr. Stephen Akintayo</h3>
+                        <p class="trustee_position">Chairman</p>
+                        <p class="trustee_bio">A renowned cardiologist with numerous publications and a passion for patient-centered care.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="trustee_card">
+                     <img src="images/bot/dennis_idahosa.jpeg" alt="Mr. Robert Williams" class="trustee_img">
+                     <div class="trustee_info">
+                        <h3 class="trustee_name">Hon. Dennis Idahosa</h3>
+                        <p class="trustee_position">Angel Investor</p>
+                        <p class="trustee_bio">Bringing financial expertise from his background in healthcare investment and hospital administration.</p>
+                     </div>
+                  </div>
+               </div>
+               <!-- <div class="col-lg-4 col-md-6">
+                  <div class="trustee_card">
+                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Maria Garcia" class="trustee_img">
+                     <div class="trustee_info">
+                        <h3 class="trustee_name">Dr. Maria Garcia</h3>
+                        <p class="trustee_position">Medical Director</p>
+                        <p class="trustee_bio">A pioneer in innovative treatment methods with a focus on integrating technology and patient care.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="trustee_card">
+                     <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Ms. Lisa Chen" class="trustee_img">
+                     <div class="trustee_info">
+                        <h3 class="trustee_name">Ms. Lisa Chen</h3>
+                        <p class="trustee_position">Community Relations</p>
+                        <p class="trustee_bio">Dedicated to building strong community partnerships and expanding healthcare access to underserved populations.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="trustee_card">
+                     <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Michael Brown" class="trustee_img">
+                     <div class="trustee_info">
+                        <h3 class="trustee_name">Dr. Michael Brown</h3>
+                        <p class="trustee_position">Research & Development</p>
+                        <p class="trustee_bio">Leading our initiatives in medical research and the implementation of evidence-based practices.</p>
+                     </div>
+                  </div>
+               </div> -->
+            </div>
+         </div>
+      </div>
+      
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
+         <div class="container-fluid">
+            <div class="contact_section_2">
+               <div class="row">
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- footer section start -->
+           {%- include footer.html -%}
+      
+      <!-- JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+      
+      <script>
+         // Header Slider Functionality
+         document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.slide-indicator');
+            const prevBtn = document.querySelector('.slide-control.prev');
+            const nextBtn = document.querySelector('.slide-control.next');
+            let currentSlide = 0;
+            let slideInterval;
+
+            // Function to show a specific slide
+            function showSlide(index) {
+               // Remove active class from all slides and indicators
+               slides.forEach(slide => slide.classList.remove('active'));
+               indicators.forEach(indicator => indicator.classList.remove('active'));
+               
+               // Add active class to current slide and indicator
+               slides[index].classList.add('active');
+               indicators[index].classList.add('active');
+               
+               currentSlide = index;
+            }
+
+            // Function to go to next slide
+            function nextSlide() {
+               let next = currentSlide + 1;
+               if (next >= slides.length) next = 0;
+               showSlide(next);
+            }
+
+            // Function to start auto sliding
+            function startSlideShow() {
+               slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            // Function to stop auto sliding
+            function stopSlideShow() {
+               clearInterval(slideInterval);
+            }
+
+            // Event listeners for manual controls
+            nextBtn.addEventListener('click', function() {
+               stopSlideShow();
+               nextSlide();
+               startSlideShow();
+            });
+
+            prevBtn.addEventListener('click', function() {
+               stopSlideShow();
+               let prev = currentSlide - 1;
+               if (prev < 0) prev = slides.length - 1;
+               showSlide(prev);
+               startSlideShow();
+            });
+
+            // Event listeners for indicators
+            indicators.forEach((indicator, index) => {
+               indicator.addEventListener('click', function() {
+                  stopSlideShow();
+                  showSlide(index);
+                  startSlideShow();
+               });
+            });
+
+            // Start the slideshow
+            startSlideShow();
+
+            // Pause slideshow when user hovers over slider
+            const slider = document.querySelector('.header-slider');
+            slider.addEventListener('mouseenter', stopSlideShow);
+            slider.addEventListener('mouseleave', startSlideShow);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+               anchor.addEventListener('click', function (e) {
+                  if (this.getAttribute('href') !== '#') {
+                     e.preventDefault();
+                     const target = document.querySelector(this.getAttribute('href'));
+                     if (target) {
+                        window.scrollTo({
+                           top: target.offsetTop - 80,
+                           behavior: 'smooth'
+                        });
+                     }
+                  }
+               });
+            });
+            
+            // Form submission handling
+            document.getElementById('signupForm').addEventListener('submit', function(e) {
+               e.preventDefault();
+               // Basic validation
+               const password = document.getElementById('password').value;
+               const confirmPassword = document.getElementById('confirmPassword').value;
+               
+               if (password !== confirmPassword) {
+                  alert('Passwords do not match!');
+                  return;
+               }
+               
+               // Here you would typically send the data to your server
+               alert('Sign up successful! Welcome to MediCare.');
+               $('#signupModal').modal('hide');
+            });
+            
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+               e.preventDefault();
+               // Here you would typically send the login data to your server
+               alert('Login successful!');
+               $('#loginModal').modal('hide');
+            });
+         });
+      </script> 
+   </body>
+</html>
