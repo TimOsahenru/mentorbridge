@@ -1,26 +1,128 @@
----
-layout: default
-title: About - OduWa
----
-
-<!-- about section start -->
-<div class="about_section layout_padding margim_90">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-6">
-            <h1 class="about_taital">About OduWa</h1>
-            <p class="about_text">
-               OduWa has a more-or-less normal distribution of letters, as opposed to using 
-               'Content here, content here', making it look like readable English. 
-               Many desktop publishing packages and web page editors 
-               have a more-or-less normal distribution of letters, too.
-            </p>
-            <div class="about_bt"><a href="#">Read More</a></div>
-         </div>
-         <div class="col-md-6">
-            <div class="about_img"><img src="images/mentorship/8.jpeg" alt="About OduWa"></div>
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>About - OduWa</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+      
+      <!-- Additional styling for improvements -->
+      <style>
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+        
+        .back-home-btn:hover {
+            background-color: transparent;
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .back-home-btn i {
+            margin-right: 8px;
+        }
+        
+        .about_img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about_img img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .about_img:hover img {
+            transform: scale(1.03);
+        }
+        
+        .about_taital {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .about_taital:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #000;
+        }
+        
+        @media (max-width: 767px) {
+            .about_section .row {
+                flex-direction: column-reverse;
+            }
+            
+            .about_section .col-md-6:first-child {
+                margin-top: 30px;
+            }
+        }
+      </style>
+   </head>
+   <body>
+      <div class="about_section layout_padding margim_90">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <h1 class="about_taital">About OduWa</h1>
+                  <p class="about_text">OduWa is dedicated to creating meaningful impact through our services and community engagement. We believe in the power of connection, growth, and transformation. Our team works tirelessly to deliver exceptional value to our clients and partners.</p>
+                  <p class="about_text">With a focus on innovation and excellence, we strive to set new standards in our industry while maintaining our core values of integrity, collaboration, and sustainability.</p>
+                  <div class="about_bt mt-4">
+                     <a href="index.html" class="back-home-btn">
+                        <i class="fa fa-arrow-left"></i> Back to Home
+                     </a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="about_img">
+                     <img src="images/mentorship/8.jpeg" alt="About OduWa">
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
-   </div>
-</div>
-<!-- about section end -->
+   </body>
+</html>

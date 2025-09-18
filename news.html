@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>oduwa - mentors connect</title>
+      <meta name="keywords" content="mentorship, enterprenuer, business, edo state">
+      <meta name="description" content="Bridging the gap between mentors and mentees">
+      <meta name="author" content="MediCare Hospital">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+      <style>
+         /* News/Blog Section Styles */
+         .news_section {
+            padding: 70px 0;
+            background-color: #f8f9fa;
+         }
+         
+         .news_taital {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+         }
+         
+         .news_taital:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0cb7d6;
+         }
+         
+         .news_text {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+         }
+         
+         .news_card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+         }
+         
+         .news_card:hover {
+            transform: translateY(-10px);
+         }
+         
+         .news_img_container {
+            height: 200px;
+            overflow: hidden;
+         }
+         
+         .news_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+         }
+         
+         .news_card:hover .news_img {
+            transform: scale(1.05);
+         }
+         
+         .news_info {
+            padding: 20px;
+         }
+         
+         .news_date {
+            color: #0cb7d6;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+         }
+         
+         .news_title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.3;
+         }
+         
+         .news_title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+         }
+         
+         .news_title a:hover {
+            color: #0cb7d6;
+         }
+         
+         .news_excerpt {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+         }
+         
+         .news_read_more {
+            color: #0cb7d6;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+         }
+         
+         .news_read_more:hover {
+            color: #098a9f;
+            text-decoration: none;
+         }
+         
+         .news_read_more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+         }
+         
+         .news_read_more:hover i {
+            transform: translateX(3px);
+         }
+         
+         .news_categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+         }
+         
+         .news_category {
+            padding: 8px 20px;
+            background: white;
+            border-radius: 30px;
+            margin: 0 10px 10px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 14px;
+         }
+         
+         .news_category.active, .news_category:hover {
+            background: #0cb7d6;
+            color: white;
+         }
+         
+         .view_all_btn {
+            text-align: center;
+            margin-top: 40px;
+         }
+         
+         .btn_view_all {
+            background: linear-gradient(to right, #0cb7d6, #0a9eb8);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+         }
+         
+         .btn_view_all:hover {
+            background: linear-gradient(to right, #0a9eb8, #098a9f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(12, 183, 214, 0.4);
+            color: white;
+            text-decoration: none;
+         }
+         
+         @media (max-width: 768px) {
+            .news_card {
+               margin-bottom: 20px;
+            }
+            
+            .news_category {
+               margin-bottom: 10px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- News/Blog Section -->
+      <div id="news" class="news_section">
+         <div class="container">
+            <h2 class="news_taital">Latest News & Updates</h2>
+            <p class="news_text">Stay informed with the latest mentorship insights, success stories, and program updates from OduWa.</p>
+            
+            <div class="news_categories">
+               <div class="news_category active">All</div>
+               <div class="news_category">Mentorship</div>
+               <div class="news_category">Success Stories</div>
+               <div class="news_category">Events</div>
+               <div class="news_category">Tips & Advice</div>
+            </div>
+            
+            <div class="row">
+               <!-- News Item 1 -->
+               <div class="col-lg-4 col-md-6">
+                  <div class="news_card">
+                     <div class="news_img_container">
+                        <img src="images/mentorship/2.jpeg" alt="Mentorship Workshop" class="news_img">
+                     </div>
+                     <div class="news_info">
+                        <span class="news_date"><i class="fa fa-calendar"></i> October 15, 2023</span>
+                        <h3 class="news_title"><a href="#">Annual Mentorship Workshop Sets New Participation Record</a></h3>
+                        <p class="news_excerpt">Our 2023 mentorship workshop brought together over 200 mentors and mentees for a day of learning and connection.</p>
+                        <a href="#" class="news_read_more">Read More <i class="fa fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- News Item 2 -->
+               <div class="col-lg-4 col-md-6">
+                  <div class="news_card">
+                     <div class="news_img_container">
+                        <img src="images/mentorship/4.jpeg" alt="Success Story" class="news_img">
+                     </div>
+                     <div class="news_info">
+                        <span class="news_date"><i class="fa fa-calendar"></i> September 28, 2023</span>
+                        <h3 class="news_title"><a href="#">From Mentee to CEO: Jane's Inspiring Journey</a></h3>
+                        <p class="news_excerpt">How a six-month mentorship program helped Jane transform her startup idea into a thriving business with 20 employees.</p>
+                        <a href="#" class="news_read_more">Read More <i class="fa fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- News Item 3 -->
+               <div class="col-lg-4 col-md-6">
+                  <div class="news_card">
+                     <div class="news_img_container">
+                        <img src="images/mentorship/6.jpeg" alt="Tech Mentorship" class="news_img">
+                     </div>
+                     <div class="news_info">
+                        <span class="news_date"><i class="fa fa-calendar"></i> September 10, 2023</span>
+                        <h3 class="news_title"><a href="#">New Tech Mentorship Program Launches in Partnership with Amazon</a></h3>
+                        <p class="news_excerpt">Our new initiative will provide 100 aspiring tech professionals with industry mentors from leading technology companies.</p>
+                        <a href="#" class="news_read_more">Read More <i class="fa fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         
+                     
+            <div class="view_all_btn">
+               <a href="/" class="btn_view_all"><i class="fa fa-arrow-left"></i> Back to Home</a>
+            </div>
+         </div>
+      </div>
+      <!-- News/Blog Section End -->
+      
+      <!-- JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+      
+      <script>
+         // Category filtering functionality
+         document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.news_category');
+            
+            categories.forEach(category => {
+               category.addEventListener('click', function() {
+                  // Remove active class from all categories
+                  categories.forEach(cat => cat.classList.remove('active'));
+                  
+                  // Add active class to clicked category
+                  this.classList.add('active');
+                  
+                  // Here you would typically filter the news items based on category
+                  // This is just a placeholder for the filtering functionality
+                  console.log('Filtering by: ' + this.textContent);
+               });
+            });
+         });
+      </script>
+   </body>
+</html>
